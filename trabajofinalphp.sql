@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2020 a las 22:07:07
+-- Tiempo de generación: 23-06-2020 a las 21:10:01
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `trabajofinalphp`
---
+ CREATE DATABASE trabajofinalphp;
+ USE trabajofinalphp;
 
 -- --------------------------------------------------------
 
@@ -38,47 +39,7 @@ CREATE TABLE `agendaservicio` (
 --
 
 INSERT INTO `agendaservicio` (`IdAgendaServicio`, `IdServicio`, `Fecha`) VALUES
-(1, 1, '2020-06-22'),
-(2, 4, '2020-06-22'),
-(3, 4, '2020-06-22'),
-(4, 3, '2020-06-22'),
-(5, 3, '2020-06-22'),
-(6, 3, '2020-06-22'),
-(7, 3, '2020-06-22'),
-(8, 3, '2020-06-22'),
-(9, 0, '2020-06-22'),
-(10, 5, '2020-06-22'),
-(11, 5, '2020-06-22'),
-(12, 1, '2020-06-22'),
-(13, 1, '2020-06-22'),
-(14, 1, '2020-06-22'),
-(15, 1, '2020-06-22'),
-(16, 1, '2020-06-22'),
-(17, 1, '2020-06-22'),
-(18, 1, '2020-06-22'),
-(19, 1, '2020-06-22'),
-(20, 3, '2020-06-22'),
-(21, 3, '2020-06-22'),
-(22, 3, '2020-06-22'),
-(23, 5, '2020-06-22'),
-(24, 5, '2020-06-22'),
-(25, 5, '2020-06-22'),
-(26, 1, '2020-06-22'),
-(27, 0, '2020-06-22'),
-(28, 0, '2020-06-22'),
-(29, 1, '2020-06-22'),
-(30, 1, '2020-06-22'),
-(31, 1, '2020-06-22'),
-(32, 1, '2020-06-22'),
-(33, 1, '2020-06-22'),
-(34, 1, '2020-06-22'),
-(35, 1, '2020-06-22'),
-(36, 1, '2020-06-22'),
-(37, 1, '2020-06-22'),
-(38, 1, '2020-06-22'),
-(39, 1, '2020-06-22'),
-(40, 1, '2020-06-22'),
-(41, 1, '2020-06-22');
+(1, 1, '2020-06-23');
 
 -- --------------------------------------------------------
 
@@ -103,7 +64,7 @@ CREATE TABLE `contacto` (
 --
 
 INSERT INTO `contacto` (`IdContacto`, `Nombre`, `Apellido_1`, `Apellido_2`, `Documento`, `Estado`, `IdCorreo`, `IdTelefono`, `Cargo`) VALUES
-(1, 'Olmeiro', 'Orozco', 'Ortiz', 1026140756, 2, 'olme.orozco@gmail.com', 2147483647, 'estudiante');
+(3, 'prueba', 'prueba', 'prueba', 0, 3, 'prueba@gmail.com', 0, 'prueba');
 
 -- --------------------------------------------------------
 
@@ -118,6 +79,13 @@ CREATE TABLE `detalleagendaservicio` (
   `Tarea1` varchar(50) NOT NULL,
   `Tarea2` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `detalleagendaservicio`
+--
+
+INSERT INTO `detalleagendaservicio` (`IdDetalleAgendaServicio`, `IdServicio`, `IdOperario`, `Tarea1`, `Tarea2`) VALUES
+(1, 1, 8, 'lavar', 'secar');
 
 -- --------------------------------------------------------
 
@@ -135,8 +103,7 @@ CREATE TABLE `estado` (
 --
 
 INSERT INTO `estado` (`IdEstado`, `Estado`) VALUES
-(1, 'Activo'),
-(2, 'Inactivo');
+(3, 'Activo');
 
 -- --------------------------------------------------------
 
@@ -157,8 +124,7 @@ CREATE TABLE `operario` (
 --
 
 INSERT INTO `operario` (`IdOperario`, `Nombre`, `Apellido`, `Documento`, `Celular`) VALUES
-(1, 'Albertin', 'Gomez', 569874589, 2147483647),
-(3, 'Didier', 'Orozco', 71397767, 313525487);
+(8, 'operadorPrueba', 'operadorPrueba', 555, 666);
 
 -- --------------------------------------------------------
 
@@ -180,7 +146,7 @@ CREATE TABLE `servicio` (
 --
 
 INSERT INTO `servicio` (`IdServicio`, `NombreObra`, `IdEstadoServicio`, `IdCotizacion`, `FechaInicio`, `FechaFin`) VALUES
-(1, 'fenix', 1, 1, '2020-06-10', '2020-07-02');
+(1, 'PruebaServicio', 1, 1, '2020-06-19', '2020-06-26');
 
 -- --------------------------------------------------------
 
@@ -201,8 +167,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `Nombre`, `Clave`, `TipoUsuario`, `Estado`) VALUES
-(0, 'olme', '123', 'admin', 1),
-(1, 'olme', '123', 'admin', 1);
+(0, 'admin', '123', '1', 1);
 
 --
 -- Índices para tablas volcadas
@@ -253,31 +218,31 @@ ALTER TABLE `servicio`
 -- AUTO_INCREMENT de la tabla `agendaservicio`
 --
 ALTER TABLE `agendaservicio`
-  MODIFY `IdAgendaServicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `IdAgendaServicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `IdContacto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdContacto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `detalleagendaservicio`
 --
 ALTER TABLE `detalleagendaservicio`
-  MODIFY `IdDetalleAgendaServicio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdDetalleAgendaServicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
 --
 ALTER TABLE `estado`
-  MODIFY `IdEstado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdEstado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `operario`
 --
 ALTER TABLE `operario`
-  MODIFY `IdOperario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdOperario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`

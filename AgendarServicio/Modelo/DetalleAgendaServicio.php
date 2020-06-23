@@ -1,7 +1,7 @@
 <?php
 class DetalleAgendaServicio
 {
- private $IdDetalleAgenda;
+ private $IdDetalleAgendaServicio;
  private $IdServicio;
  private $IdOperario;
  private $Tarea1;
@@ -9,14 +9,14 @@ class DetalleAgendaServicio
 
  public function __construct(){}
 
- public function setIdDetalle($IdDetalle)
+ public function setIdDetalleAgendaServicio($IdDetalleAgendaServicio)
  {
-   $this->IdDetalle = $IdDetalle;
+   $this->IdDetalleAgendaServicio = $IdDetalleAgendaServicio;
  }
 
- public function getIdDetalle()
+ public function getIdDetalleAgendaServicio()
  {
-   return $this->IdDetalle;
+   return $this->IdDetalleAgendaServicio;
  }
 
  public function setIdServicio($IdServicio)

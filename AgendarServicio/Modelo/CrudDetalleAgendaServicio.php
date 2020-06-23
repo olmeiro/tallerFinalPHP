@@ -27,5 +27,29 @@ class CrudDetalleAgendaServicio
     }
     return $DetalleInsertado;
   }
+
+  public function ListarDetalleServicio()
+   {
+        $Db = Db::Conectar();
+        $ListaDetalleServicio = [];
+        $Sql = $Db->query('SELECT detalleagendaservicio.IdDetalleAgendaServicio, detalleagendaservicio.IdServicio, detalleagendaservicio.IdOperario, operario.Nombre, detalleagendaservicio.Tarea1, detalleagendaservicio.Tarea2 FROM detalleagendaservicio INNER JOIN operario ON detalleagendaservicio.IdOperario=operario.IdOperario');
+
+        $Sql->execute();
+
+        foreach($Sql->fetchAll() as $DetServicio){
+             $MyDetalleServicio = new DetalleAgendaServicio();
+
+             $MyDetalleServicio->setIdDetalleAgendaServicio($DetServicio['IdDetalleAgendaServicio']);
+             $MyDetalleServicio->setIdServicio($DetServicio['IdServicio']);
+             $MyDetalleServicio->setIdOperario($DetServicio['Nombre']);
+             $MyDetalleServicio->setTarea1($DetServicio['Tarea1']);
+             $MyDetalleServicio->setTarea2($DetServicio['Tarea2']);
+             //$MyDetalleServicio->setNombre($DetServicio['Nombre']);
+
+             $ListaDetalleServicio[]=$MyDetalleServicio;
+        }
+        return $ListaDetalleServicio;
+   }
+
 }
  ?>

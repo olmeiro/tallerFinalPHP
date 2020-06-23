@@ -86,7 +86,7 @@ $ListaContactos = $CrudContacto->listarContactos();
                     <th scope="col">Nombre</th>
                     <th scope="col">Primer Apellido</th>
                     <th scope="col">Segundo Apellido</th>
-                  
+
                     <th scope="col">Estado</th>
                     <th scope="col">Correo</th>
                     <th scope="col">Teléfono</th>
@@ -114,7 +114,7 @@ $ListaContactos = $CrudContacto->listarContactos();
                               <td>
                               <?php echo $Contacto->getApellido_2(); ?>
                               </td>
-                             
+
                               <td>
                               <?php //if($Contacto->getEstado() == "1"){ echo "Activo";} else{ echo "Inactivo";}
                                    echo $Contacto->getEstado();
@@ -139,13 +139,13 @@ $ListaContactos = $CrudContacto->listarContactos();
                    ?>
                </tbody>
           </table>
-          
+
           <div class="form-group col-md-12" style="text-align: center; margin-top:55px;">
-            <button type="button" class="btn btn-outline-dark"><a href="../../navegar.php" style="color:black;">Volver</button>  
+            <button type="button" class="btn btn-outline-dark"><a href="../../navegar.php" style="color:black;">Volver</button>
           </div>
      </div>
      <div class="form-group col-md-12" style="text-align: center; margin-top:55px;">
-               <h6 class="">Presentado por Olmeiro Orozco Ortiz SENA-ADSI 2020 &copy</h6>     
+               <h6 class="">Presentado por Olmeiro Orozco Ortiz SENA-ADSI 2020 &copy</h6>
           </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
