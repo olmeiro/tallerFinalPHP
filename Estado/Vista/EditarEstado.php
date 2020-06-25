@@ -15,7 +15,7 @@ if(!(isset($_SESSION["Nombre"]))) //si la sesión no existe redireccionar al log
   $CrudEstado = new CrudEstado(); //Crear un objeto tipo CrudCompetencia
   $Estado = $CrudEstado::ObtenerEstado($_GET["IdEstado"]);
 
-  $mysqli = new mysqli('localhost', 'root', '', 'contacto_obras');
+  $mysqli = new mysqli('localhost', 'root', '', 'trabajofinalphp');
 
  ?>
 <!DOCTYPE html>
@@ -84,11 +84,11 @@ if(!(isset($_SESSION["Nombre"]))) //si la sesión no existe redireccionar al log
                         <button type="button" class="btn btn-outline-dark  btn-lg"><a href="listarEstado.php" style="color:black;">Volver</button>
                       </div>
                   </div>
-                
+
               </form>
 
      </div>
-  
+
   </body>
     <!-- <script src="js/main2.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

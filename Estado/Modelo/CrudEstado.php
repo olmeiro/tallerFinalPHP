@@ -22,8 +22,9 @@ class CrudEstado
           // echo "Registro exitoso estado";
           ?>
           <script>
-            alert("Registro de estado éxitoso");
-            document.location.href = "../Vista/listarEstado.php";
+            //alert("Registro de estado éxitoso");
+            Swal.fire('Registro de estado éxitoso')
+            //document.location.href = "../Vista/listarEstado.php";
           </script>
           <?php
 
@@ -116,6 +117,7 @@ class CrudEstado
           ?>
           <script>
             alert("Eliminación éxitosa!!!");
+            //Swal.fire('Registro de estado éxitoso')
             document.location.href = "../Vista/ListarEstado.php";
           </script>
           <?php

@@ -14,6 +14,9 @@ if(isset($_POST["Registrar"]))
     //$Estado -> setIdEstado($_POST['IdEstado']);
     $Estado -> setEstado($_POST["Estado"]);
     $CrudEstado::InsertarEstado($Estado);
+
+    $nuevoEstado = $_POST['Estado'];
+    echo "Registro de Estado Exitoso";
 }
 else if(isset($_POST['Modificar']))
 {
