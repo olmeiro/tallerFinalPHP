@@ -92,23 +92,6 @@ $(document).ready(function(){
 
         if(validado == 8)
         {
-            Swal.fire({
-                title: 'Está seguro de enviar los datos?',
-                text: "Asegurese de diligenciar bien los campos!",
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, enviar datos!'
-              }).then((result) => {
-                if (result.value) {
-                  Swal.fire(
-                    'Datos enviados!',
-                    'Sus datos han sido enviados correctamente.',
-                    'success'
-                  )
-                }
-            });
             document.frmInsertarContacto.submit();
         }
         else
@@ -116,8 +99,6 @@ $(document).ready(function(){
             Swal.fire('Faltan campos por diligenciar.');
             validado = 0;
         }
-    
-
     })
 })
 
@@ -143,7 +124,3 @@ function limpiar()
     $("select").val("");
     $("span").val("");
 }
-
-
-
-

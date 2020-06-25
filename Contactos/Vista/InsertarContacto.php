@@ -22,8 +22,6 @@ if(!(isset($_SESSION["Nombre"]))) //si la sesión no existe redireccionar al log
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!-- <link rel="stylesheet" href="css/estiloClientes.css"> -->
-        <!-- CSS only -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <title>Clientes</title>
@@ -144,7 +142,6 @@ if(!(isset($_SESSION["Nombre"]))) //si la sesión no existe redireccionar al log
                       <div class="form-group col-md-12">
                         <input type="hidden" name="Registrar">
                         <button type="submit" class="btn btn-primary btn-lg" id="Registrar" name="Registrar">Registrar</button>
-
                       </div>
                   </div>
 

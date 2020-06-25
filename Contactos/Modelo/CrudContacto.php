@@ -36,12 +36,16 @@ class CrudContacto
         {
           $Insert->execute();//ejecutar el INSERT
           //echo "Registro exitoso";
-          ?>
-          <script>
-            alert("Registro éxitoso");
-            document.location.href = "../Vista/listarContacto.php";
-          </script>
-          <?php
+          // ?>
+          // <script>
+          //   alert("Registro éxitoso");
+          //
+          //   document.location.href = "../Vista/listarContacto.php";
+          //
+          // </script>
+          // <?php
+
+          header("location:../Vista/listarContacto.php");
 
         }
         catch(Exception $e)
@@ -86,7 +90,7 @@ class CrudContacto
     {
       $Db = Db::Conectar();
       $listaContactos = [];
-      $Sql = $Db->query('SELECT contacto.Nombre, contacto.Apellido_1, contacto.Apellido_2, contacto.Documento, estado.Estado, 
+      $Sql = $Db->query('SELECT contacto.Nombre, contacto.Apellido_1, contacto.Apellido_2, contacto.Documento, estado.Estado,
       contacto.IdCorreo, contacto.IdTelefono, contacto.Cargo FROM contacto INNER JOIN estado ON contacto.Estado = estado.IdEstado');
       $Sql->execute();
       foreach($Sql->fetchAll() as $Contacto)
@@ -119,7 +123,7 @@ class CrudContacto
                                                  IdTelefono=:IdTelefono,
                                                  Cargo=:Cargo
                                                  WHERE Documento=:Documento');//para usar bindvalue para evitar sqlInjection
-      
+
         $Sql->bindValue('IdContacto', $Contacto->getIdContacto());
         $Sql->bindValue('Nombre', $Contacto->getNombre());
         $Sql->bindValue('Apellido_1', $Contacto->getApellido_1());
@@ -129,7 +133,7 @@ class CrudContacto
         $Sql->bindValue('IdCorreo', $Contacto->getCorreo());
         $Sql->bindValue('IdTelefono', $Contacto->getTelefono());
         $Sql->bindValue('Cargo', $Contacto->getCargo());
-       
+
 
         try
         {

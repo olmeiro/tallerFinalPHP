@@ -60,8 +60,7 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
           ?>
        </tbody>
      </table>
-     <a class="nav-link activ btn-primary btn-lg" type="button" href="../../navegar.php" style="width:150px; margin-left:640px; margin-top:10px; align="center">Volver</a>
-
+     <a class="nav-link activ btn-primary btn-lg" type="button" href="../../navegar.php" style="width:150px; margin-left:640px; margin-top:10px;">Volver</a>
       </div>
 
    </body>

@@ -82,7 +82,7 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
 
                <div class="form-row">
                  <div class="form-group col-md-6">
-                   <label for="Nombre">Nombre del contacto</label>
+                   <label for="Nombre">Número del servicio</label>
                    <select name="IdServicio" id="IdServicio" class="form-control">
                      <option value="">Seleccione número de servicio</option>
                      <?php
@@ -94,16 +94,16 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
                        }
                       ?>
                    </select>
-                   <small id="valNombre" class="form-text text-muted">
+                   <small id="valIdServicio" class="form-text text-muted">
                        Seleccione el ID de su servicio.
                      </small>
-                     <label for="Nombre" id="valNombre"></label>
+                     <!-- <label for="IdServicio" id="valIdServicio"></label> -->
                  </div>
 
                  <div class="form-group col-md-6">
-                   <label for="Apellido_1">Primer Apellido</label>
+                   <label for="IdOperario">Nombre Operario</label>
                    <select name="IdOperario" id="IdOperario" class="form-control">
-                     <option values="">Seleccione Operario</option>
+                     <option value="">Seleccione Operario</option>
                      <?php
                        foreach ($ListarOperarios as $Operario)
                        {
@@ -113,10 +113,10 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
                        }
                       ?>
                    </select>
-                   <small id="valApellido_1" class="form-text text-muted">
-                       Ingrese primer apellido del contacto, sólo caracteres.
+                   <small id="valIdOperario" class="form-text text-muted">
+                       Seleccione el operario para servicio.
                      </small>
-                     <label for="Apellido_1" id="valApellido1"></label>
+                     <!-- <label for="IdOperario" id="valIdOperario"></label> -->
                  </div>
                </div>
 
@@ -125,9 +125,9 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
                      <label for="Tarea1">Tarea 1</label>
                      <input type="text" class="form-control" id="Tarea1" name="Tarea1">
                      <small id="valTarea1" class="form-text text-muted">
-                      Ingrese la tarea del operario.
+                      Ingrese la primer tarea del operario.
                      </small>
-                     <label for="Apellido_2" id="valApellido2"></label>
+                     <label for="Tarea1" id="valTarea1"></label>
                    </div>
 
                    <div class="form-group col-md-6">
@@ -136,7 +136,7 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
                      <small id="valTarea2" class="form-text text-muted">
                        Ingrese la segunda tarea del operario.
                      </small>
-                     <label for="Documento" id="valDocumento"></label>
+                     <label for="Tarea2" id="valTarea2"></label>
                    </div>
                  </div>
 
@@ -146,8 +146,10 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
                    <div class="form-row">
                        <div class="form-group col-md-12">
                          <input type="hidden" name="Registrar" id="Registrar" value="">
-                         <input type="hidden" name="Registrar">
-                         <button type="button" class="btn btn-primary btn-lg" id="AgregarOperario" name="AgregarOperario" onclick="AgregarDetalle()" style="margin-right:5px;">Agregar Operario</button>
+                         <!-- <input type="hidden" name="Registrar"> -->
+                         <!-- <button type="button" class="btn btn-primary btn-lg" id="AgregarOperario" name="AgregarOperario" onclick="AgregarDetalle()" style="margin-right:5px;">Agregar Operario</button> -->
+                         <button type="button" class="btn btn-primary btn-lg" id="AgregarOperario" name="AgregarOperario" style="margin-right:5px;">Agregar Operario</button>
+
                        </div>
                    </div>
                    <div class="form-row">
@@ -172,10 +174,7 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
 
                      </table>
                      <input type="text" id="OperariosAgregados" name="OperariosAgregados" value="0" readonly>
-
                    </div>
-
-
            </form>
  </div>
           <div class="form-group col-md-12" style="text-align: center; margin-top:55px;">
@@ -186,10 +185,11 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
                <h6 class="">Presentado por Olmeiro Orozco Ortiz SENA-ADSI 2020 &copy</h6>
      </div>
 </body>
+<script src="js/main.js" charset="utf-8"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script>
+<!-- <script>
   function AgregarDetalle()
   {
     //let IdOperario = $("#IdOperario").val();
@@ -224,5 +224,5 @@ $ListarOperarios = $CrudOperario->ListarOperarios();
     });
   });
 
-  </script>
+  </script> -->
 </html>

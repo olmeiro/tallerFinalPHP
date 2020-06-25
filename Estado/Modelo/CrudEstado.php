@@ -19,7 +19,7 @@ class CrudEstado
         try
         {
           $Insert->execute();//ejecutar el INSERT
-          //echo "Registro exitoso";
+          // echo "Registro exitoso estado";
           ?>
           <script>
             alert("Registro de estado éxitoso");
@@ -81,10 +81,10 @@ class CrudEstado
         $Db = Db::Conectar(); //Conectar a BBDD revisar conexion
         //Definir la insercion a realizar.
         $Sql = $Db->prepare('UPDATE estado SET  Estado=:Estado WHERE IdEstado=:IdEstado');//para usar bindvalue para evitar sqlInjection
-      
+
         $Sql->bindValue('IdEstado', $Estado->getIdEstado());
         $Sql->bindValue('Estado', $Estado->getEstado());
-        
+
         try
         {
           $Sql->execute();//ejecutar el UPDATE

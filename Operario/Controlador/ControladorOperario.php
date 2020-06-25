@@ -43,9 +43,6 @@ if(!(isset($_SESSION["Nombre"]))) //si la sesión no existe redireccionar al log
   else if ($_GET['Accion']=="EliminarOperario")
   {
     $CrudOperario::EliminarOperario($_GET["IdOperario"]);//Llamar al metodo eliminar
-    //echo "En desarrollo";
-    //echo $_GET["CodigoCompetencia"];
-
   }
 
  ?>

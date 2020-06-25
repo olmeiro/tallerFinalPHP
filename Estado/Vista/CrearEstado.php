@@ -10,11 +10,9 @@ if(!(isset($_SESSION["Nombre"]))) //si la sesión no existe redireccionar al log
 
   require_once('../../conexion.php');
 
-
   $mysqli = new mysqli('localhost', 'root', '', 'trabajofinalphp');
 
  ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,41 +58,38 @@ if(!(isset($_SESSION["Nombre"]))) //si la sesión no existe redireccionar al log
           <br>
 
             <form action="../Controlador/ControladorEstado.php" method="POST" id="frmInsertarEstado" name="frmInsertarEstado">
-            <div class="form-row">
-                  <!-- <div class="form-group col-md-12">
-                    <label for="Nombre">Id Del Estado</label>
-                    <input type="text" class="form-control" id="IdEstado" name="IdEstado">
-                    <small id="valIdEstado" class="form-text text-muted">
-                        Ingrese Id del estado, no puede ser igual a los existentes.
-                      </small>
-                      <label for="IdEstado" id="valIdEstado"></label>
-                  </div> -->
-                <div class="form-row">
-                  <div class="form-group col-md-12">
+            <!-- <form action="verificarEstado.php" method="POST" id="frmInsertarEstado" name="frmInsertarEstado"> -->
+            <!-- <div class="form-row"> -->
+                <div class="form-row ">
+                  <div class="form-group col-md-6">
                     <label for="Nombre">Nombre nuevo de estado del Cliente</label>
-                    <input type="text" class="form-control" id="Estado" name="Estado">
-                    <small id="valEstado" class="form-text text-muted">
+                      <input type="text" class="form-control" id="Estado" name="Estado">
+                      <small id="valEstado" class="form-text text-muted">
                         Ingrese nombre del estado, sólo caracteres.
                       </small>
                       <label for="Estado" id="valEstado"></label>
                   </div>
-
+                  <!-- <div class="form-group col-md-6">
+                    <p id="mensaje"></p>
+                  </div> -->
+                </div>
                   <div class="form-row">
-                      <div class="form-group col-md-12">
+                      <div class="form-group col-md-6">
                         <input type="hidden" name="Registrar">
                         <button type="submit" class="btn btn-primary btn-lg" id="Registrar" name="Registrar">Crear Estado</button>
+                        <!-- <button type="submit" class="btn btn-primary btn-lg">Crear Estado</button> -->
+
                         <br>
                       </div>
                   </div>
             </form>
+              <!-- <p id="mensaje"></p> -->
             <div class="form-row">
-                      <div class="form-group col-md-12">
-                      <button type="button" class="btn btn-outline-info btn-s" style="margin-left: 50px;"><a class="nav-link active" href="../../Estado/Vista/listarEstado.php">Volver</a></button>
-                      </div>
-                  </div>
-
-        </div>
-
+                <div class="form-group col-md-12">
+                  <button type="button" class="btn btn-outline-info btn-s" style="margin-left: 50px;"><a class="nav-link active" href="../../Estado/Vista/listarEstado.php">Volver</a></button>
+                </div>
+            </div>
+        <!-- </div> -->
     </body>
     <script src="js/main.js"></script>
     <!-- JS, Popper.js, and jQuery -->

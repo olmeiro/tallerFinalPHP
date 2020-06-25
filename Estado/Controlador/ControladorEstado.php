@@ -21,7 +21,7 @@ else if(isset($_POST['Modificar']))
     $Estado->setEstado($_POST['Estado']);
 
     $CrudEstado::ModificarEstado($Estado);
- 
+
 }
 else if($_GET['Accion']=="EliminarEstado")
 {
